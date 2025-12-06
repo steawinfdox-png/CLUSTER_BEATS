@@ -5,15 +5,19 @@ An end-to-end NLP pipeline that analyzes the music artist, Stray Kids' entire 7-
 Languages + Tools
 - Python (data analysis, visualization, NLP, clustering)
 - JupyterLab (interactive dev.)
+  
 Data Extraction
 - Genius API (lyric scraping, song title and release date extraction)
 - Requests (API communication)
+  
 Natural Language Processing
 - NLTK (song tokenization)
 - scikit-learn (TF-IDF vectorization, K-Means unsupervised clustering)
+  
 LLM's
 - Groq API (automated cluster naming)
 - Llama-3.3-70B (label generation)
+  
 Data Visualization
 - Matplotlib (Emotional timeline)
 - Seaborn (Trend visuals)
