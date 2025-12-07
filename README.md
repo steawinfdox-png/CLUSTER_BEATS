@@ -118,7 +118,7 @@ Attached are several visualizations that help interpret the emotional structure 
 (shows actual number-based freqency of all clusters from entire discography)
 <img width="1304" height="630" alt="Screenshot (189)" src="https://github.com/user-attachments/assets/7bc1bb72-526e-4e48-831d-5f9048eaa701" />
 
-5. [VADER Sentiment Analysis]
+4. [VADER Sentiment Analysis]
 (traditional pre-clustering pos-neg-neu classifications)
 <img width="597" height="526" alt="Pie" src="https://github.com/user-attachments/assets/7ad6047a-cb4b-4d07-b9a5-f09cd6096535" />
 
