@@ -1,5 +1,5 @@
 <div align = "center">
-  <img width="379" height="300" alt="Screenshot_2025-12-10_12 14 22_PM-removebg-preview" src="https://github.com/user-attachments/assets/6b91799b-192f-4943-84aa-7ae4a971fd58" />
+  <img width="379" height="300" alt="Screenshot_2025-12-10_12 14 22_PM-removebg-preview" src="https://github.com/user-attachments/assets/fa7c03a4-15ca-4212-a3f2-4fd7c7f3de8d" />
 </div>
 
 # Unsupervised Emotional Clustering and Three-Tier Visualization of Music Artists' Discography
