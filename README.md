@@ -2,7 +2,10 @@
   <img width="379" height="300" alt="Screenshot_2025-12-10_12 14 22_PM-removebg-preview" src="https://github.com/user-attachments/assets/fa7c03a4-15ca-4212-a3f2-4fd7c7f3de8d" />
 </div>
 
-# Unsupervised Emotional Clustering and Three-Tier Visualization of Music Artists' Discography
+<p align = "center">
+  <h1> </h1>Unsupervised Emotional Clustering and Three-Tier Visualization of Music Artists' Discography </h1>
+</p>
+
 Cluster Beats is an end-to-end NLP pipeline that analyzes any and all music artists' discographies (scraped from Genius API) by clustering lyrics from all of their songs into emotional themes using TF-IDF vectorization and unsupervised learning through K-Means. Next, Cluster Beats auto-generates interpretable labels for each discography cluster using a Groq-hosted LLM, builds a emotional timeline over the artist's entire career (exact number of years can be changed), and visualizes thematic trends and patterns using Matplotlib, Plotly, and Seaborn. In addition to clustering, Cluster Beats employs the use of VADER sentiment analysis to provide baseline polarity scores for each song, allowing comparison between more traditional sentiment scoring and unsupervised learning.
 
 For demonstration, I've used Cluster Beats to analyze the K-Pop boyband, Stray Kids' entire discography from 2018-2025, to provide interested users a clear example how Cluster Beats works to analyze your favorite artist. (Additional demos are in the notebooks/ file)
