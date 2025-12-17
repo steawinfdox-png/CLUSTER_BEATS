@@ -9,7 +9,7 @@
 
 ✨ **Cluster Beats is completely customizable and accessible to all music lovers (programming experience not required!)**
 
-⚙️ **# How to Use Cluster Beats**
+⚙️ **How to Use Cluster Beats**
 
 1. Install dependencies
    a. pip install -r requirements.txt
@@ -19,7 +19,7 @@
    a. File --> New --> Terminal
    b. Enter and run "python main.py"
 
-🔬 **# Pipeline Overview**
+🔬 **Pipeline Overview**
 
 1. 🎼 Scrape Song Metadata & Lyrics
 
@@ -57,7 +57,7 @@
 * Projected high-dimensional vectors into 2D (t-SNE) for visual mapping
 * Created cluster frequency charts and an emotional timeline across the 7-year discography using Matplotlib, Plotly, and Seaborn
 
-🧰 **# Tech Stack**
+🧰 **Tech Stack**
 🧪 Languages + Tools
 
 * Python (data analysis, visualization, NLP, clustering)
@@ -97,7 +97,7 @@
 * requests
 * groq
 
-🌟 **# Key Features**
+🌟 **Key Features**
 
 * Full Discography Scraper using the Genius API to automatically download all lyrics and metadata.
 * End-to-end NLP Pipeline including preprocessing, sentiment scoring, vectorization, clustering, and labeling.
@@ -106,7 +106,7 @@
 * Temporal Analysis showing how Stray Kids’ lyrical emotions evolved across their 7-year career.
 * Clear Visualizations including sentiment trends, cluster timelines, and distribution plots.
 
-📊 **# Results**
+📊 **Results**
 
 1. 🎶 Emotional Clusters
 
@@ -134,7 +134,7 @@
 * All clusters were relatively distanced from each other in the 2D PCA, suggesting the embeddings creating meaningful variation
 * Such a uniform distribution implies a strong thematic cohesion across Stray Kids' discography even with completely different thematic classifications
 
-🖼️ **# Visualizations**
+🖼️ **Visualizations**
 📎 Attached are several visualizations that help interpret the emotional structure and trends of Stray Kids' 7-year discography
 
 1. 🎨 [Color-coded 2D PCA Cluster Map of TF-IDF Vectors]
@@ -157,16 +157,16 @@
 
    <img width="597" height="526" alt="Pie" src="https://github.com/user-attachments/assets/7ad6047a-cb4b-4d07-b9a5-f09cd6096535" />
 
-🧾 **# Conclusion**
+🧾 **Conclusion**
 📌 This project demonstrates how custom NLP methods (TF-IDF vectorization, clustering, and keyword-based emotion classification) can reveal deeper, more nuanced emotional patterns across Stray Kids’ discography than traditional sentiment tools. While VADER provides a broad positive/negative/neutral sentiment score, it often oversimplifies complex emotional tones, especially in music where themes like empowerment, vulnerability, chaos, longing, and ambition coexist within similar songs and reduces them to simply "positive", "negative", and "neutral" keywords. In contrast, the project’s custom emotion/theme pipeline captures these multilayered dynamics, producing a detailed emotional timeline and cluster map that more accurately reflects the group’s artistic evolution and versatility. Together, these insights highlight how domain-specific NLP can uncover emotional narratives that general-purpose sentiment models fail to detect, making this approach far more effective for analyzing lyrical content than traditional sentiment analysis software.
 
-📝 **# Journal**
+📝 **Journal**
 I initially attempted to use an OpenAI-hosted LLM to auto-generate cluster names, but I ran out of free credits and my requests greatly exceeded the hourly limit, leading to various, prolonged errors in my code. After several attempts to remedy the issue, I instead opted to use the simpler-to-integrate Groq-hosted LLM.
 
-📬 **# Contact Me!**
+📬 **Contact Me!**
 If you've got any suggestions or recommendations, feel free to email me at [steawinfdox@gmail.com](mailto:steawinfdox@gmail.com)!
 
-📚 **# Resources Used**
+📚 **Resources Used**
 
 * JupyterLab
 * Python
