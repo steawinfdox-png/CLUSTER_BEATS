@@ -9,28 +9,28 @@ Lyrics change. Artists grow. But there's no easy way to track how an artist real
 Cluster Beats gives us truly meaningful snapshots of an artist's discography, grouping songs by themes through unsupervised learning, before finally visualizing these themes and how they change/shift over time. This end-to-end NLP pipeline is my way of combining my love for both programming and music, and helping others do the same. Music isn't simply positive and negative, and our tools to analyze music shouldn't be, either.
 
 ## How it works (pipeline overview)
-> Scrape Song Metadata & Lyrics
-- Pull complete music artist discography using the Genius API
-- Store song titles, release dates, and full lyrics for analysis
-> Preprocess Lyrics
-* Clean and normalize text (lowercase, remove punctuation, remove stopwords)
-* Filter out metadata brackets
-> Sentiment Pre-Analysis (VADER)
-* Generate compound polarity score for each song
-* Classify into positive, neutral, or negative to visualize mood trends as supportive supplemental data
-> Vectorize Lyrics (TF-IDF)
-- Convert lyrics into numeric embeddings using TF-IDF
-- Extract key linguistic features for clustering
-> Unsupervised Clustering (K-Means)
-- Applied K-Means to TF-IDF vectors to identify latent emotional themes
-- Evaluated SSE/Elbow method to select k cluster count
-> Cluster Labeling with Groq LLM
-- Sent sample lyrics from each cluster to a Groq Llama model
-- Generated concise 3–5 word theme labels
-- Mapped each track to its theme
-> Visualization
-- Projected high-dimensional vectors into 2D (t-SNE) for visual mapping
-- Created cluster frequency charts and an emotional timeline across the 7-year discography using Matplotlib, Plotly, and Seaborn
+- Scrape Song Metadata & Lyrics
+> Pull complete music artist discography using the Genius API
+> Store song titles, release dates, and full lyrics for analysis
+- Preprocess Lyrics
+> Clean and normalize text (lowercase, remove punctuation, remove stopwords)
+> Filter out metadata brackets
+- Sentiment Pre-Analysis (VADER)
+> Generate compound polarity score for each song
+> Classify into positive, neutral, or negative to visualize mood trends as supportive supplemental data
+- Vectorize Lyrics (TF-IDF)
+> Convert lyrics into numeric embeddings using TF-IDF
+> Extract key linguistic features for clustering
+- Unsupervised Clustering (K-Means)
+> Applied K-Means to TF-IDF vectors to identify latent emotional themes
+> Evaluated SSE/Elbow method to select k cluster count
+- Cluster Labeling with Groq LLM
+> Sent sample lyrics from each cluster to a Groq Llama model
+> Generated concise 3–5 word theme labels
+> Mapped each track to its theme
+- Visualization
+> Projected high-dimensional vectors into 2D (t-SNE) for visual mapping
+> Created cluster frequency charts and an emotional timeline across the 7-year discography using Matplotlib, Plotly, and Seaborn
 
 
 
