@@ -21,16 +21,16 @@ Cluster Beats gives us truly meaningful snapshots of an artist's discography, gr
 > Vectorize Lyrics (TF-IDF)
 - Convert lyrics into numeric embeddings using TF-IDF
 - Extract key linguistic features for clustering
-5. 🔀 Unsupervised Clustering (K-Means)
-* Applied K-Means to TF-IDF vectors to identify latent emotional themes
-* Evaluated SSE/Elbow method to select k cluster count
-6. 🏷️ Cluster Labeling with Groq LLM
-* Sent sample lyrics from each cluster to a Groq Llama model
-* Generated concise 3–5 word theme labels
-* Mapped each track to its theme
-7. 📊 Visualization
-* Projected high-dimensional vectors into 2D (t-SNE) for visual mapping
-* Created cluster frequency charts and an emotional timeline across the 7-year discography using Matplotlib, Plotly, and Seaborn
+> Unsupervised Clustering (K-Means)
+- Applied K-Means to TF-IDF vectors to identify latent emotional themes
+- Evaluated SSE/Elbow method to select k cluster count
+> Cluster Labeling with Groq LLM
+- Sent sample lyrics from each cluster to a Groq Llama model
+- Generated concise 3–5 word theme labels
+- Mapped each track to its theme
+> Visualization
+- Projected high-dimensional vectors into 2D (t-SNE) for visual mapping
+- Created cluster frequency charts and an emotional timeline across the 7-year discography using Matplotlib, Plotly, and Seaborn
 
 
 
