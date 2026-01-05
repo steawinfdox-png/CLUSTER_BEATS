@@ -10,17 +10,17 @@ Cluster Beats gives us truly meaningful snapshots of an artist's discography, gr
 
 ## How it works (pipeline overview)
 🎼 Scrape Song Metadata & Lyrics
-> Pull complete music artist discography using the Genius API
-> Store song titles, release dates, and full lyrics for analysis
+- # Pull complete music artist discography using the Genius API
+- # Store song titles, release dates, and full lyrics for analysis
 🧹 Preprocess Lyrics
-* Clean and normalize text (lowercase, remove punctuation, remove stopwords)
-* Filter out metadata brackets
+> # Clean and normalize text (lowercase, remove punctuation, remove stopwords)
+> # Filter out metadata brackets
 😊 Sentiment Pre-Analysis (VADER)
-* Generate compound polarity score for each song
-* Classify into positive, neutral, or negative to visualize mood trends as supportive supplemental data
+> Generate compound polarity score for each song
+> Classify into positive, neutral, or negative to visualize mood trends as supportive supplemental data
 4. 🔢 Vectorize Lyrics (TF-IDF)
-* Convert lyrics into numeric embeddings using TF-IDF
-* Extract key linguistic features for clustering
+- Convert lyrics into numeric embeddings using TF-IDF
+- Extract key linguistic features for clustering
 5. 🔀 Unsupervised Clustering (K-Means)
 * Applied K-Means to TF-IDF vectors to identify latent emotional themes
 * Evaluated SSE/Elbow method to select k cluster count
