@@ -10,11 +10,11 @@ import lyricsgenius
 import nltk
 import sentence_transformers
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-sia = SentimentIntensityAnalyzer()
 from sklearn.model_selection import train_test_split
 from sentence_transformers import SentenceTransformer
+sia = SentimentIntensityAnalyzer()
 
-# CUSTOMIZATION
+# CUSTOMIZATION OPTIONS HERE!
 artist_name = "INSERT_PREFERRED_ARTIST"
 number_songs = "INSERT_HOW_MANY_SONGS_YOU_WANT_TO_ANALYZE --> Remove quotation marks (ex: number_songs = 75)"
 cluster_count = "INSERT_PREFERRED_CLUSTER_NUMBER --> Remove quotation marks (ex: cluster_count = 5)"
@@ -22,7 +22,7 @@ genius_api_token = "INSERT_YOUR_TOKEN"
 your_groq_key ="INSERT_YOUR_TOKEN"
 
 
-# genius api info
+# Genius API info
 genius = lyricsgenius.Genius(
     genius_api_token,
     timeout=15,
@@ -32,7 +32,7 @@ genius = lyricsgenius.Genius(
     excluded_terms = ['Remix', 'Version']
 )
 
-#scrape_genius_for_StrayKids_songs
+# Scrape songs from [genius.com](https://genius.com/)
 data = []
 scores = []
 def get_jvke(limit=500):
@@ -53,7 +53,7 @@ get_jvke(number_songs)
 
 df = pd.read_csv("jvke2.csv")
 
-#classify VADER scores
+# Classify VADER scores
 def emotions(score):
     if score > 0.3:
         return 'POSITIVE'
@@ -64,7 +64,7 @@ def emotions(score):
 df['Emotional Scale'] = df['Score'].apply(emotions)
 df.to_csv("jvke_song_emotions.csv", index=False)
 
-#assign keywords to VADER polarity scores
+# Assign keywords to VADER scores
 label_map = {"NEGATIVE": 0, "POSITIVE": 1, "NEUTRAL": 2}
 df["Label"] = df["Emotional Scale"].map(label_map)
 train_df, val_df = train_test_split(df, test_size=0.3, random_state=42, stratify=df["Label"])
@@ -75,7 +75,7 @@ print(val_df["Label"].value_counts())
 
 import requests
 
-#extract title of songs
+# Scrape titles of songs
 def search_song_id(query):
     url = "https://api.genius.com/search"
     headers = {"Authorization": f"Bearer {genius_api_token}"}
@@ -87,7 +87,7 @@ def search_song_id(query):
     except:
         return None, None
 
-#extract release date of songs
+# Scrape release dates of songs
 def fetch_release_date(title):
     song_id, full_title = search_song_id(title)
     if song_id is None:
@@ -100,6 +100,7 @@ def fetch_release_date(title):
     except:
         return None
 
+# Create new "Release Date" column in csv file
 df = pd.read_csv("jvke_song_emotions.csv")
 release_dates = []
 for title in df["Title"]:
@@ -111,7 +112,7 @@ print("Done! New column saved.")
 
 from sentence_transformers import SentenceTransformer
 
-#generate embeddings
+# Generate embeddings for all songs in dataset
 embedder = SentenceTransformer("all-mpnet-base-v2")
 df["Embedding"] = df["Lyrics"].apply(lambda x: embedder.encode(str(x)).tolist())
 df.to_csv("jvke_song_emotions.csv", index=False)
@@ -119,13 +120,13 @@ df.head
 
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-#compare songs' vectors' cosine similarity and load it into similarity_matrix
+# Compare songs' vectors' cosine similarity and load it into similarity_matrix
 embedding_matrix = np.vstack(df["Embedding"].values)
 similarity_matrix = cosine_similarity(embedding_matrix)
 similarity_matrix[:5, :5]
 
 from sklearn.cluster import KMeans
-#creating clusters by unsupervised learning through K-Means
+# Create clusters through K-Means
 kmeans = KMeans(cluster_count, random_state = 42)
 df["Cluster"] = kmeans.fit_predict(embedding_matrix)
 df.to_csv("jvke_song_emotions.csv", index=False)
@@ -143,7 +144,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 df["Lyrics"].isna().sum()
 df["Lyrics"] = df["Lyrics"].fillna("")
-# Get TF-IDF for all lyrics
+# Get TF-IDF vectors for all lyrics
 tfidf = TfidfVectorizer(stop_words="english", max_features=2000)
 X_tfidf = tfidf.fit_transform(df["Lyrics"])
 terms = tfidf.get_feature_names_out()
@@ -201,14 +202,13 @@ df.to_csv("jvke_song_emotions.csv", index=False)
 
 from sklearn.manifold import TSNE
 import plotly.express as px
-
 embedding_matrix = np.vstack(df["Embedding"].to_numpy())
 tsne = TSNE(n_components = 2, random_state = 42, perplexity = 5)
 tsne_results = tsne.fit_transform(embedding_matrix)
 df["TSNE_1"] = tsne_results[:, 0]
 df["TSNE_2"] = tsne_results[:, 1]
 
-#plot TF-IDF vector space with color-coded clusters
+# Plot TF-IDF vector space and generate cluster map w/ labels
 fig = px.scatter(
     df,
     x="TSNE_1",
@@ -224,7 +224,7 @@ fig.update_layout(title_text = artist_name + " Discography Cluster Map (TF-IDF v
 fig.show()
 
 import seaborn as sns
-#plot chronological frequency of all clusters
+# Temporal analysis of song themes
 df["Release Date"] = pd.to_datetime(df["Release Date"], errors="coerce")
 df["Year"] = df["Release Date"].dt.year
 timeline = df.groupby(["Year", "Cluster Names"]).size().reset_index(name = "Count")
@@ -237,9 +237,8 @@ plt.legend(loc="upper right", bbox_to_anchor=(1.8, 1), ncol=1)
 plt.show()
 
 import matplotlib.pyplot as plt
-# Count songs per cluster
 cluster_counts = df["Cluster"].value_counts().sort_index()
-# Map cluster numbers → LLM-generated names
+# Measure each cluster numerically
 labels = [cluster_names[c] for c in cluster_counts.index]
 plt.figure(figsize=(10, 5))
 plt.bar(labels, cluster_counts.values)
@@ -250,7 +249,7 @@ plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
 
-#plot traditional VADER analysis scores
+# Plot VADER analysis scores
 plt.figure(figsize=(7,5))
 df["Emotional Scale"].value_counts().plot(kind="pie")
 plt.title(f"{artist_name} Songs by Predominant Emotion")
