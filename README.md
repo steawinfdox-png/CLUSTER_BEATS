@@ -48,8 +48,8 @@ For demonstration, I've used Cluster Beats to analyze the K-Pop boyband, Stray K
 
    <img width="1225" height="910" alt="image" src="https://github.com/user-attachments/assets/643de493-c9be-4d03-9fcd-c745167f3372" />
    
-* The K-Means model (k=5) produced clusters that were semantically consistent when evaluated qualitatively
-**Groq-hosted LLM cluster names closely matched the lyrical tone and vocabulary of each respective cluster:**
+The K-Means model (k=5) produced clusters that were semantically consistent when evaluated qualitatively
+Groq-hosted LLM cluster names closely matched the lyrical tone and vocabulary of each respective cluster:
   > Unstoppable Inner Strength
   > Self-Empowerment through Adversity
   > Youthful Energy Explosion
