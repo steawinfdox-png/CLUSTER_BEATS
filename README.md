@@ -67,7 +67,7 @@ For demonstration, I've used Cluster Beats to analyze the K-Pop boyband, Stray K
    a. File --> New --> Terminal
    b. Enter and run "python main.py"
 
-📦 **## Requirements**
+📦 **Requirements**
 
 1. pandas
 2. numpy
