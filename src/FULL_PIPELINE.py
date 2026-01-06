@@ -32,7 +32,7 @@ genius = lyricsgenius.Genius(
     excluded_terms = ['Remix', 'Version']
 )
 
-# Scrape songs from [genius.com](https://genius.com/)
+# Scrape songs/lyrics from Genius.com
 data = []
 scores = []
 def get_jvke(limit=500):
