@@ -14,11 +14,11 @@ Cluster Beats is a customizable end-to-end NLP pipeline that first scrapes song,
 ## Demo
 For demonstration, I've used Cluster Beats to analyze the K-Pop boyband, Stray Kids' entire discography from 2018-2025, to provide interested users a clear example how Cluster Beats works to analyze your favorite artist. (Click [here](https://github.com/steawinfdox-png/Cluster-Beats/tree/main/notebooks) for more)
 
-### Color-coded 2D PCA Cluster Map of TF-IDF Vectors (w/ Groq-generated labels)
+### Color-coded 2D PCA Cluster Map of TF-IDF Vectors
 
    <img width="1225" height="910" alt="image" src="https://github.com/user-attachments/assets/643de493-c9be-4d03-9fcd-c745167f3372" />
   
-### Emotional Timeline
+### Emotional Timeline (w/ Groq-generated labels)
 
    <img width="1131" height="679" alt="Timeline" src="https://github.com/user-attachments/assets/bc318f10-6e62-4542-a824-54e7041873e8" />
 
