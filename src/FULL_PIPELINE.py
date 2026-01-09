@@ -163,7 +163,7 @@ from groq import Groq
 
 client = Groq(api_key = your_groq_key)
 cluster_names = {}
-#auto-generate cluster names using Groq-hosted LLM
+# Auto-generate cluster names using Groq-hosted LLM
 for c in sorted(df["Cluster"].unique()):
     # Combine the lyrics for this cluster
     combined = "\n\n---\n\n".join(cluster_samples[c])
@@ -219,12 +219,12 @@ fig = px.scatter(
     height=780,
     width=920
 )
-#fix title position
+# Fix title position
 fig.update_layout(title_text = artist_name + " Discography Cluster Map (TF-IDF vector projection, color coded by cluster)", title_x=0.5)
 fig.show()
 
 import seaborn as sns
-# Temporal analysis of song themes
+# Temporal visualization of song themes
 df["Release Date"] = pd.to_datetime(df["Release Date"], errors="coerce")
 df["Year"] = df["Release Date"].dt.year
 timeline = df.groupby(["Year", "Cluster Names"]).size().reset_index(name = "Count")
