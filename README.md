@@ -1,4 +1,4 @@
-# Cluster Beats
+<h1 align = "center"> Cluster Beats </h1>
 > NLP-powered analysis of public music discographies
 - Get your Genius API key: https://docs.genius.com/#/getting-started-h1
 - Get your Groq API key: https://console.groq.com/keys
