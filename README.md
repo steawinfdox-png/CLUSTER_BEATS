@@ -1,7 +1,8 @@
 <h1 align = "center"> Cluster Beats </h1>
 <p align = "center"> NLP-powered analysis of public music discographies </p>
-- Get your Genius API key: https://docs.genius.com/#/getting-started-h1
-- Get your Groq API key: https://console.groq.com/keys
+
+> Get your Genius API key: https://docs.genius.com/#/getting-started-h1
+> Get your Groq API key: https://console.groq.com/keys
 
 ## Motivation
 Lyrics change. Artists grow. But there's no easy way to track how an artist really evolves throughout their career. Traditional sentiment analysis tools oversimplify themes into "positive", "negative", and "neutral", offering no deeper look into the artist's raw thematic journey. That's why I made Cluster Beats.
