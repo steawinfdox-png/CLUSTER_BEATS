@@ -1,6 +1,3 @@
-<h1 align = "center"> Cluster Beats </h1>
-<p align = "center"> NLP-powered analysis of public music discographies </p>
-
 <div align = "center">
 
 # Cluster Beats
