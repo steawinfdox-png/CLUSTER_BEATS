@@ -7,12 +7,15 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
 [![Version](https://img.shields.io/badge/version-0.1.0-orange)]()
-[![Platform](https://img.shields.io/badge/platform-linux-lightgrey)]()
 
 *NLP-powered analysis of public music discographies*
 
 </div>
 
+## Overview
+**Cluster Beats** is a customizable NLP-powered pipeline that ingests and analyzes publically available music discographies. It utilizes robust features such as REST API integration, unsupervised learning, sentiment analysis, vectorization, tokenization, and embedding to output a vibrant assortment of visualizations that tell the story of your favorite music artist through their songs.
+
+## Get your API keys
 Get your Genius API key: https://docs.genius.com/#/getting-started-h1
 
 Get your Groq API key: https://console.groq.com/keys
