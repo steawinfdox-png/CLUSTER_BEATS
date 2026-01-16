@@ -102,7 +102,7 @@ This project demonstrates how custom NLP methods (TF-IDF vectorization, clusteri
 I initially attempted to use an OpenAI-hosted LLM to auto-generate cluster names, but I ran out of free credits and my requests greatly exceeded the hourly limit, leading to various, prolonged errors in my code. As a result, I opted to use the simpler-to-integrate Groq-hosted LLM, instead.
 
 # Contact Me!
-If you've got any suggestions or recommendations, feel free to email me at [steawinfdox@gmail.com](mailto:steawinfdox@gmail.com)!
+If you've got any suggestions or recommendations, feel free to [open an issue](https://github.com/steawinfdox-png/Cluster-Beats/issues) or send me a pull request!
 
 ## Resources Used
 * JupyterLab
