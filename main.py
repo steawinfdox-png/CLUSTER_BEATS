@@ -1,1 +1,1 @@
-import src.FULL_PIPELINE
+import main.full_pipeline
